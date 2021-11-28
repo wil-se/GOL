@@ -42,6 +42,17 @@ export class Universe{
         }
     }
 
+    public reset() {
+        let temp = new Array<Array<Cell>>();
+        for(var row = 0; row < this.rows; row++) {
+            temp[row] = new Array<Cell>();
+            for(var col = 0; col < this.cols; col++) {
+                temp[row].push(new Cell(row*this.cellSideLength, col*this.cellSideLength));
+            }
+        }
+        this.field = temp;
+    }
+
     public getAliveNeighbors(row: number, col: number){
         var count = 0;
         // get neighbors like if matrix lies on a toro

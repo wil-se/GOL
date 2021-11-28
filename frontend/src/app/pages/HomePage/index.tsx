@@ -8,13 +8,15 @@ import Button from 'react-bootstrap/Button';
 export function HomePage() {
 
   const [state, setstate] = useState({play:false})
+  const [reset, setreset] = useState({reset:0})
+  
 
   const changeState = () => {  
-    setstate({play:!state.play}); 
+    setstate({play:!state.play,}); 
    }; 
 
-  const reset = () => {  
-   setstate({play:!state.play}); 
+  const changeReset = () => {  
+   setreset({reset:++reset.reset});
   }; 
 
   return (
@@ -25,8 +27,8 @@ export function HomePage() {
       </Helmet>
       <h2>Game of Life</h2>
       <Button onClick={changeState} style={{"margin": "0px 0px 10px 0px"}} variant="dark">Play/Pause</Button>{' '}
-      <Button onClick={reset} style={{"margin": "0px 0px 10px 0px"}} variant="dark">Reset</Button>{' '}
-      <GameOfLifePage play={state.play}/>
+      <Button onClick={changeReset} style={{"margin": "0px 0px 10px 0px"}} variant="dark">Reset</Button>{' '}
+      <GameOfLifePage play={state.play} reset={reset.reset}/>
       {/* bonus */}
       {/* <RandomWalkerPage /> */}
     </>
