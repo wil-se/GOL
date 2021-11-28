@@ -17,6 +17,13 @@ export class Cell {
         } else {
             p5.fill(p5.color(225, 255, 225))
         }
+
+        if(this.age > 0){
+            p5.fill(p5.color(120, 180, 100+this.age))
+        } else {
+            p5.fill(p5.color(255, 255, 255))
+        }
+
         p5.rect(this.x, this.y, size, size);
     }
 }

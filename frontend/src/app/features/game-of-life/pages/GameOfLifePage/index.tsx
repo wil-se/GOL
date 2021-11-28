@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
 
-function GameOfLifePage({ play, reset }){
+function GameOfLifePage({ play, reset, framerate, seed }){
   return (
     <div>
-      <GameOfLife play={play} reset={reset}/>
+      <GameOfLife play={play} reset={reset} framerate={framerate} seed={seed}/>
     </div>
   );
 };
